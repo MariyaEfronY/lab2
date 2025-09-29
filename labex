@@ -1,0 +1,219 @@
+R Lab
+E.x:8  Creation of Piechart 
+Aim: To plot the vector as Pie chart using R language
+Procedure
+Step1) Install R and R Studio IDE in the System
+Step2) Create a new script file using the command FileNew FileR Script or                
+            Ctrl +Shift+N.
+Step3) Create vector and plot it as Pie chart using functions. 
+Step4) Save this file using FileSave  or Ctrl+S
+Step5) Select ALL and run the script file using Ctrl+Enter 
+Step6) Close the R Script file.
+
+Program coding
+
+x<-c(10,20,30,40)
+chart1<-pie(x,init.angle=90)
+print(chart1)
+mylabel<-c("Toyota","Benz","Maruti","Audi")
+chart2<-pie(x,label=mylabel,main="Cars")
+print(chart2)
+colors<-c("red","blue","green","yellow")
+chart3<-pie(x,label=mylabel,col=colors)
+legend("bottomright",mylabel,fill=colors)
+print(chart3)
+
+Result : 
+Thus Vector has been plotted as Pie chart using R programming language successfully
+ 
+
+Ex.9  Importing and Analyzing mtcars dataset
+
+Aim: To import mtcars dataset and perform various operations using R language
+Procedure
+Step1) Install R and R Studio IDE in the System
+Step2) Create a new script file using the command FileNew FileR Script     or       Ctrl +Shift+N.
+Step3) Install ggplot2 package and load mtcars dataset . 
+Step4) Perform various descriptive statistical operations using functions.
+Step5) Save this file using FileSave  or Ctrl+S
+Step5) Select ALL and run the script file using Ctrl+Enter 
+Step6) Close the R Script file.
+
+Program coding
+
+install.packages("ggplot2")
+library("ggplot2")
+data(mtcars)
+mtcars
+#To summarize each variable in dataset
+summary(mtcars)
+#Structure of dataset
+str(mtcars)
+#dimensions in terms of number of rows and columns
+dim(mtcars)
+#get all quartiles of mpg variable
+res<-quantile(mtcars$mpg)
+print(res)
+#get maximum mpg 
+print(max(mtcars$mpg))
+#count number of observations
+print(nrow(mtcars))
+#count number of variables
+print(ncol(mtcars))
+#first 6 observations
+head(mtcars)
+#last 6 observations
+tail(mtcars)
+
+#cars with cylinder>6 and mpg>15.5
+data<-subset(mtcars,cyl>6 & mpg>15.5)
+print(data)
+write.csv(data,"P:\\mtcarsdata.csv",row.names=TRUE)
+print(“The observations with cylinder greater than 6 and mileage greater than 15.5 is”)
+read.csv("P:\\mtcarsdata.csv")
+
+
+Result : 
+Thus mtcars dataset has been loaded and analysed  using R language successfully
+ 
+Ex.10  Analyzing and Visualizing mtcars dataset
+
+Aim: To import mtcars dataset and plot the values in histogram using R language
+Procedure
+Step1) Install R and R Studio IDE in the System
+Step2) Create a new script file using the command FileNew FileR Script     or       Ctrl +Shift+N.
+Step3) Install ggplot2 package and load mtcars dataset . 
+Step4) Perform various descriptive statistical operations using functions.
+Step5) Plot the variable values in histogram
+Step6) Save this file using FileSave  or Ctrl+S
+Step7) Select ALL and run the script file using Ctrl+Enter 
+Step8) Close the R Script file.
+
+Program coding
+
+install.packages("ggplot2")
+library("ggplot2")
+data(mtcars)
+mtcars
+#To summarize each variable in dataset
+summary(mtcars)
+#Structure of dataset
+str(mtcars)
+#dimensions in terms of number of rows and columns
+dim(mtcars)
+#get all quartiles of mpg variable
+res<-quantile(mtcars$mpg)
+print(res)
+#get maximum mpg 
+print(max(mtcars$mpg))
+#count number of observations
+print(nrow(mtcars))
+#count number of variables
+print(ncol(mtcars))
+#first 6 observations
+head(mtcars)
+#last 6 observations
+tail(mtcars)
+
+#create histogram of mpg values
+hist(mtcars$mpg,
+     col=”steelblue”,
+     main=”Histogram of Mileage vaues”,
+     xlab=”mpg”,
+     ylab=”Frequency”)
+
+
+write.csv(data,"P:\\mtcarsdata.csv",row.names=TRUE)
+print(“The observations with cylinder greater than 6 and mileage greater than 15.5 is”)
+read.csv("P:\\mtcarsdata.csv")
+
+
+Result : 
+Thus mtcars dataset has been loaded, analysed and visualized in histogram using R language successfully 
+
+Ex.12  Importing and Analyzing IRIS dataset
+
+Aim: To import IRIS dataset and perform various operations using R language
+Procedure
+Step1) Install R and R Studio IDE in the System
+Step2) Create a new script file using the command FileNew FileR Script     or       Ctrl +Shift+N.
+Step3) Install ggplot2 package and load IRIS dataset . 
+Step4) Perform various descriptive statistical operations using functions.
+Step5) Save this file using FileSave  or Ctrl+S
+Step5) Select ALL and run the script file using Ctrl+Enter 
+Step6) Close the R Script file.
+
+Program coding
+
+#install.packages("ggplot2")
+#library("ggplot2")
+data(iris)
+iris
+summary(iris)
+str(iris)
+print(nrow(iris))
+#count number of variables
+print(ncol(iris))
+#first 6 observations
+head(iris)
+#last 6 observations
+tail(iris)
+#extract only setosa species 
+res<-subset(iris,Species=="setosa")
+print(res)
+#extract only sepal length and find sum,mean,median,min and max values
+mysepal = iris$Sepal.Length
+sum(mysepal)
+mean(mysepal)
+median(mysepal)
+min(mysepal)
+max(mysepal)
+attach(iris)
+plot(Sepal.Length, Sepal.Width)
+plot(Sepal.Length, Sepal.Width, ylim=c(0,5), xlim=c(3,9))
+Result : 
+Thus IRIS dataset has been loaded and various operations performed  using R language successfully
+
+
+ 
+Ex.11  Performing Statistical testing t-test and  Correlation on two sample variables of mtcars dataset
+
+Aim: To perform students t-test and finding correlation between two sample variables using R language
+Procedure
+Step1) Install R and R Studio IDE in the System
+Step2) Create a new script file using the command FileNew FileR Script     or       Ctrl +Shift+N.
+Step3) Install ggplot2 package and load mtcars dataset . 
+Step4) Perform statistical t-test and finding correlation using functions.
+Step5) Plot the result in boxplot.
+Step6) Save this file using FileSave  or Ctrl+S
+Step7) Select ALL and run the script file using Ctrl+Enter 
+Step8) Close the R Script file.
+
+Program coding
+
+# View the first few rows of the dataset
+head(mtcars)
+
+# Separate the data into two groups (e.g., automatic vs. manual transmission)
+group_auto <- mtcars$mpg[mtcars$am==0]
+group_manual <- mtcars$mpg[mtcars$am==1]
+
+# Perform a two-sample t-test
+result <- t.test(group_auto, group_manual)
+
+# Print the result
+print(result)
+
+#finding correlation between mileage per gallon and weight
+cor.test(mtcars$mpg,mtcars$wt)
+means <- c(mean(group_auto), mean(group_manual))
+names <- c("Automatic", "Manual")
+# Create a boxplot
+boxplot(group_auto, group_manual, 
+        names = c("Automatic", "Manual"),
+        main = "Miles per Gallon (mpg) by Transmission Type",
+        ylab = "Miles per Gallon (mpg)")
+Result : 
+
+Thus mtcars dataset has been loaded and performed statistical t-test ,correlation using R language successfully
+
